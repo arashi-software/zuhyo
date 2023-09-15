@@ -7,10 +7,10 @@
 
 import unittest
 
-import inquire
+import zuhyo
 test "client":
   let 
-    api = inquire.newClient("https://graphql.anilist.co")
+    api = zuhyo.newClient("https://graphql.anilist.co")
     query = "tests/test.gql".readQuery(vars {"id": "15125"})
     req = api.request(query)
   check req.body == readFile("tests/res.json")

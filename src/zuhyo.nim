@@ -2,7 +2,7 @@
 
 import puppy, tables, jsony
 
-type InquireClient* = ref object
+type ZuhyoClient* = ref object
   url*: string
 
 type
@@ -19,11 +19,11 @@ template vars*[A, B](ctx: openArray[(A, B)]): Variables =
 
 proc dumpHook*(s: var string, v: Variables) = s.add $v
 
-proc newClient*(url: string): InquireClient =
-  ## Create a new inquire client
+proc newClient*(url: string): ZuhyoClient =
+  ## Create a new zuhyo client
   ## .. code:: nim
-  ##   let api = inquire.newClient("<some_url>")
-  return InquireClient(url: url)
+  ##   let api = zuhyo.newClient("<some_url>")
+  return ZuhyoClient(url: url)
 
 proc readQuery*(filename: string, v: Variables): Query =
   ## Read a graphql query from `filename` and use the variables `v`
@@ -43,11 +43,11 @@ proc newQuery*(body: string, v: Variables): Query =
     variables: v
   )
 
-proc request*(api: InquireClient, query: Query): Response =
-  ## Request a response from the api provided in `InquireClient` using the `query`
+proc request*(api: ZuhyoClient, query: Query): Response =
+  ## Request a response from the api provided in `ZuhyoClient` using the `query`
   ## .. code:: nim
   ##   let 
-  ##     api = inquire.newClient("<some_url>") 
+  ##     api = zuhyo.newClient("<some_url>") 
   ##     query = "<some_filename>".readQuery(vars {"<var_name>": "<var_val>"})
   ##     req = api.request(query) 
   ##

@@ -1,4 +1,4 @@
-# Inquire
+# Zuhyo (図表)
 The easiest way to interact with a graphql api
 
 ### Features
@@ -6,16 +6,16 @@ The easiest way to interact with a graphql api
  - No need for openssl or other ssl libraries when compiling
 ## Installation
 
-Inquire can be installed through nimble (coming soon)
+Zuhyo can be installed through nimble (coming soon)
 
 ```sh
-nimble install inquire
+nimble install zuhyo
 ```
 
 or through git
 
 ```sh
-nimble install https://github.com/arashi-software/inquire
+nimble install https://github.com/arashi-software/zuhyo
 ```
 
 ## Usage
@@ -24,7 +24,7 @@ GraphQL query from a file
 
 ```nim
 let 
-  api = inquire.newClient("https://graphql.anilist.co") # Create a new inquire client; Pass in the api endpoint
+  api = zuhyo.newClient("https://graphql.anilist.co") # Create a new zuhyo client; Pass in the api endpoint
   query = "tests/test.gql".readQuery(vars {"id": "15125"}) # Read a file to create a query and pass in variables using the vars function
   req = api.request(query) # Finally request from the api using the graphql query we just created
 
@@ -37,7 +37,7 @@ GraphQL query from text
 
 ```nim
 let 
-  api = inquire.newClient("https://graphql.anilist.co") # Create a new inquire client; Pass in the api endpoint
+  api = zuhyo.newClient("https://graphql.anilist.co") # Create a new zuhyo client; Pass in the api endpoint
   query = """
 query ($id: Int) { # Define which variables will be used in the query (id)
   Media (id: $id, type: ANIME) { # Insert our variables into the query arguments (id) (type: ANIME is hard-coded in the query)

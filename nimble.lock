@@ -1,0 +1,60 @@
+{
+  "version": 2,
+  "packages": {
+    "zippy": {
+      "version": "0.10.10",
+      "vcsRevision": "a3fd6f0458ffdd7cbbd416be99f2ca80a7852d82",
+      "url": "https://github.com/guzba/zippy",
+      "downloadMethod": "git",
+      "dependencies": [],
+      "checksums": {
+        "sha1": "f32aa1f7795b1ff0d890ad165cd56091bf6f32d0"
+      }
+    },
+    "libcurl": {
+      "version": "1.0.0",
+      "vcsRevision": "23f3d90e60d7a233b5eb27fb13e57fd198c73697",
+      "url": "https://github.com/Araq/libcurl",
+      "downloadMethod": "git",
+      "dependencies": [],
+      "checksums": {
+        "sha1": "177d7007155096f9091126f81e7dda0032bffe9d"
+      }
+    },
+    "webby": {
+      "version": "0.1.9",
+      "vcsRevision": "bd30e9213d9469ce720b4868bad229c475bc79c7",
+      "url": "https://github.com/treeform/webby/",
+      "downloadMethod": "git",
+      "dependencies": [],
+      "checksums": {
+        "sha1": "42dde0474686b78b226d47b1be1adfced85a0c10"
+      }
+    },
+    "puppy": {
+      "version": "2.1.0",
+      "vcsRevision": "938329893d0ba327e64e9c193a7d6e14fd49e64b",
+      "url": "https://github.com/treeform/puppy",
+      "downloadMethod": "git",
+      "dependencies": [
+        "libcurl",
+        "zippy",
+        "webby"
+      ],
+      "checksums": {
+        "sha1": "330c089ab54d3346c59e5c0fffeb7d09b1422a83"
+      }
+    },
+    "jsony": {
+      "version": "1.1.5",
+      "vcsRevision": "ea811bec7fa50f5abd3088ba94cda74285e93f18",
+      "url": "https://github.com/treeform/jsony",
+      "downloadMethod": "git",
+      "dependencies": [],
+      "checksums": {
+        "sha1": "6aeb83e7481ca8686396a568096054bc668294df"
+      }
+    }
+  },
+  "tasks": {}
+}

@@ -164,7 +164,7 @@
   <dt><pre><span class="Keyword">proc</span> <a href="#newClient%2Cstring"><span class="Identifier">newClient</span></a><span class="Other">(</span><span class="Identifier">url</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <a href="zuhyo.html#ZuhyoClient"><span class="Identifier">ZuhyoClient</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    Create a new zuhyo client .. code:: nim let api = zuhyo.newClient(&quot;&lt;some_url&gt;&quot;)
+    Create a new zuhyo client .. code-block:: nim let api = zuhyo.newClient(&quot;&lt;some_url&gt;&quot;)
     
   </dd>
 </div>
@@ -176,7 +176,7 @@
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    Create a query from <tt class="docutils literal"><span class="pre"><span class="Identifier">body</span></span></tt> using variables <tt class="docutils literal"><span class="pre"><span class="Identifier">v</span></span></tt> .. code:: nim let query = newQuery(&quot;&lt;query_text&gt;&quot;, vars {&quot;&lt;var_name&gt;&quot;: &quot;&lt;var_val&gt;&quot;})
+    Create a query from <tt class="docutils literal"><span class="pre"><span class="Identifier">body</span></span></tt> using variables <tt class="docutils literal"><span class="pre"><span class="Identifier">v</span></span></tt> .. code-block:: nim let query = newQuery(&quot;&lt;query_text&gt;&quot;, vars {&quot;&lt;var_name&gt;&quot;: &quot;&lt;var_val&gt;&quot;})
     
   </dd>
 </div>
@@ -188,7 +188,7 @@
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    Read a graphql query from <tt class="docutils literal"><span class="pre"><span class="Identifier">filename</span></span></tt> and use the variables <tt class="docutils literal"><span class="pre"><span class="Identifier">v</span></span></tt> .. code:: nim let query = &quot;&lt;some_filename&gt;&quot;.readQuery(vars {&quot;&lt;var_name&gt;&quot;: &quot;&lt;var_val&gt;&quot;})
+    Read a graphql query from <tt class="docutils literal"><span class="pre"><span class="Identifier">filename</span></span></tt> and use the variables <tt class="docutils literal"><span class="pre"><span class="Identifier">v</span></span></tt> .. code-block:: nim let query = &quot;&lt;some_filename&gt;&quot;.readQuery(vars {&quot;&lt;var_name&gt;&quot;: &quot;&lt;var_val&gt;&quot;})
     
   </dd>
 </div>
@@ -200,7 +200,7 @@
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">CatchableError</span><span class="Other">,</span> <span class="Identifier">PuppyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    <p>Request a response from the api provided in <tt class="docutils literal"><span class="pre"><span class="Identifier">ZuhyoClient</span></span></tt> using the <tt class="docutils literal"><span class="pre"><span class="Identifier">query</span></span></tt> .. code:: nim let api = zuhyo.newClient(&quot;&lt;some_url&gt;&quot;) query = &quot;&lt;some_filename&gt;&quot;.readQuery(vars {&quot;&lt;var_name&gt;&quot;: &quot;&lt;var_val&gt;&quot;}) req = api.request(query)</p>
+    <p>Request a response from the api provided in <tt class="docutils literal"><span class="pre"><span class="Identifier">ZuhyoClient</span></span></tt> using the <tt class="docutils literal"><span class="pre"><span class="Identifier">query</span></span></tt> .. code-block:: nim let api = zuhyo.newClient(&quot;&lt;some_url&gt;&quot;) query = &quot;&lt;some_filename&gt;&quot;.readQuery(vars {&quot;&lt;var_name&gt;&quot;: &quot;&lt;var_val&gt;&quot;}) req = api.request(query)</p>
 <p>echo req.code echo req.headers echo req.body </p>
 
     
@@ -219,7 +219,7 @@
   <dt><pre><span class="Keyword">template</span> <a href="#vars.t%2CopenArray%5B%5D"><span class="Identifier">vars</span></a><span class="Other">[</span><span class="Identifier">A</span><span class="Other">,</span> <span class="Identifier">B</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ctx</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Other">(</span><span class="Identifier">A</span><span class="Other">,</span> <span class="Identifier">B</span><span class="Other">)</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <a href="zuhyo.html#Variables"><span class="Identifier">Variables</span></a></pre></dt>
   <dd>
     
-    Converts a table into the Variables type .. code:: nim let someVariables = vars {&quot;&lt;var_name&gt;&quot;: &quot;&lt;var_val&gt;&quot;}
+    Converts a table into the Variables type .. code-block:: nim let someVariables = vars {&quot;&lt;var_name&gt;&quot;: &quot;&lt;var_val&gt;&quot;}
     
   </dd>
 </div>
@@ -235,7 +235,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-09-15 04:57:14 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-09-15 05:14:55 UTC</small>
       </div>
     </div>
   </div>
